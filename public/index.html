@@ -774,7 +774,7 @@ function openModalByKey(key){
   if(spot) openModal(spot);
   else{
     const sit=(S.lastData?.situations||[]).find(s=>s.region===key||s._key===key);
-    if(sit) openModal({label:sit.title,region:sit.region,key:sit._key||sit.region,color:#e03020,lon:0,lat:0});
+   if(sit) openModal({label:sit.title,region:sit.region,key:sit._key||sit.region,color:'#e03020',lon:0,lat:0});
   }
 }
 function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
