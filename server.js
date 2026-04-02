@@ -5,6 +5,7 @@ const { Readable } = require('stream');
 
 const app = express();
 app.use(express.json({ limit: '2mb' }));
+app.use((req, res, next) => { res.setHeader('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:"); next(); });
 app.use(express.static(path.join(__dirname, 'public')));
 
 const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
